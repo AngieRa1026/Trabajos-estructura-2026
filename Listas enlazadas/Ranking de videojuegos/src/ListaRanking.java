@@ -68,6 +68,37 @@ public class ListaRanking {
             actual = actual.getSiguiente();
         }
     }
+    public Ranking encontrarMaximo() {
+        if (cabeza == null) {
+            return null; // La lista está vacía
+        }
+
+        Nodo actual = cabeza;
+        Ranking maximo = actual.getRanking();
+
+        while (actual != null) {
+            if (actual.getRanking().getPuntuacion() > maximo.getPuntuacion()) {
+                maximo = actual.getRanking();
+            }
+            actual = actual.getSiguiente();
+        }
+        return maximo;
+    }
+    public boolean buscarValoresRepetidos() {
+        Nodo actual = cabeza;
+
+        while (actual != null) {
+            Nodo siguiente = actual.getSiguiente();
+            while (siguiente != null) {
+                if (actual.getRanking().getNombre().equals(siguiente.getRanking().getNombre())) {
+                    return true; // Se encontró un valor repetido
+                }
+                siguiente = siguiente.getSiguiente();
+            }
+            actual = actual.getSiguiente();
+        }
+        return false; // No se encontraron valores repetidos
+    }
 
     public void mostrarRanking() {
         Nodo actual = cabeza;
