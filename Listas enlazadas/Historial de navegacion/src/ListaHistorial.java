@@ -55,3 +55,4 @@ public class ListaHistorial {
             actual = actual.getSiguiente();
         }
     }
+}

@@ -11,8 +11,8 @@ public class Main {
         System.out.println("\nBuscando historial 'https://www.github.com':");
         System.out.println(lista.buscarHistorial("https://www.github.com"));
 
-        lista.eliminarHistorial("https://www.stackoverflow.com");
-        System.out.println(lista.eliminarHistorial("https://www.stackoverflow.com"));
+        System.out.println("\nEliminando historial 'https://www.google.com':");
+        System.out.println(lista.eliminarHistorial("https://www.google.com"));
 
         System.out.println("\nLista historial :");
         lista.listarHistorial();
